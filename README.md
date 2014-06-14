@@ -4,7 +4,7 @@ markdown-cmd
 A comand markdown to convert markdown file to html
 
 
-
+## Usage
 ```
 Usage: markdown [options] <input_file>
 
@@ -34,3 +34,7 @@ A comand markdown to convert markdown file to html
 
 
 ```
+
+## TODO
+- html types other doctypes support
+- html themes, night themes
