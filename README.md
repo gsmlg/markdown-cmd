@@ -3,12 +3,9 @@ markdown-cmd
 
 A comand markdown to convert markdown file to html
 
-usage:
 
-```bash
 
-bin/markdown --help
-
+```
 Usage: markdown [options] <input_file>
 
 A comand markdown to convert markdown file to html
