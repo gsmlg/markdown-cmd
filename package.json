@@ -1,8 +1,8 @@
 {
   "name": "markdown-cmd",
-  "version": "0.0.1",
+  "version": "0.1.0",
   "description": "A comand markdown to convert markdown file to html",
-  "main": "index.js",
+  "main": "lib",
   "scripts": {
     "test": "npm test"
   },

@@ -4,7 +4,7 @@
 
 var fs = require('fs'),
     path = require('path'),
-    p = require('../index'),
+    p = require('../lib'),
     argp = require('argp'),
     argv = argp.createParser({ once: true })
         .allowUndefinedArguments()
@@ -20,13 +20,30 @@ var fs = require('fs'),
         })
         .body()
         .text(" Options:")
-        .option({short: "o", long: "output", description: "output filename"})
+        .option({short: "o", long: "output", metavar: "STR", optional: true, description: "output filename"})
+        .option({short: "c", long: "code-theme", choices: p.codeThemes, default: p.codeDefaultTheme,
+                 metavar: "STR", optional: true,
+                 description: "The code themes, default: " + p.codeDefaultTheme + ".\nAvaliables themes: \n" + p.codeThemes.join(', ')})
         .help()
         .argv();
 
-console.log(argv);
 var input = fs.readFileSync(argv.file, {encoding: "utf8"});
 
 var out = p.marked(input);
 
-console.log(out);
+var html = p.html;
+
+var codethemeHolder = '<!--code-theme-->';
+var markdownHolder = '<!--markdown-->';
+
+// console.log(argv['code-theme']);process.exit();
+var codeTheme = argv['code-theme'];
+
+html = html.replace(codethemeHolder, fs.readFileSync(p.codeThemeCss[codeTheme], 'utf8'))
+    .replace(markdownHolder, out);
+
+var outputFile = argv.output || argv.file + '.html';
+
+fs.writeFileSync(outputFile, html);
+
+
