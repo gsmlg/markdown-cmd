@@ -1,0 +1,21 @@
+{
+  "name": "markdown-cmd",
+  "version": "0.0.1",
+  "description": "A comand markdown to convert .md .markdown file to html",
+  "main": "index.js",
+  "scripts": {
+    "test": "npm test"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/gsmlg/markdown-cmd.git"
+  },
+  "keywords": [
+    "markdown"
+  ],
+  "author": "gsmlg",
+  "license": "BSD-2-Clause",
+  "bugs": {
+    "url": "https://github.com/gsmlg/markdown-cmd/issues"
+  }
+}
