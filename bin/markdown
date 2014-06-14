@@ -1,0 +1,32 @@
+#!/usr/bin/env node
+
+"use strict";
+
+var fs = require('fs'),
+    path = require('path'),
+    p = require('../index'),
+    argp = require('argp'),
+    argv = argp.createParser({ once: true })
+        .allowUndefinedArguments()
+        .readPackage(path.join(__dirname, '..', 'package.json'))
+        .usages(["markdown [options] <input_file>"])
+        .on ("argument", function (argv, argument, ignore){
+            if (argv.file) this.fail ("Too many arguments.");
+            argv.file = argument;
+            ignore ();
+        })
+        .on ("end", function (argv){
+            if (!argv.file) this.fail ("An input file is required");
+        })
+        .body()
+        .text(" Options:")
+        .option({short: "o", long: "output", description: "output filename"})
+        .help()
+        .argv();
+
+console.log(argv);
+var input = fs.readFileSync(argv.file, {encoding: "utf8"});
+
+var out = p.marked(input);
+
+console.log(out);
