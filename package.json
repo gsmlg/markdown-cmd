@@ -1,26 +1,30 @@
 {
-  "name": "markdown-cmd",
-  "version": "0.1.0",
-  "description": "A comand markdown to convert markdown file to html",
-  "main": "lib",
-  "scripts": {
-    "test": "npm test"
-  },
-  "repository": {
-    "type": "git",
-    "url": "git://github.com/gsmlg/markdown-cmd.git"
-  },
-  "keywords": [
-    "markdown"
-  ],
-  "author": "gsmlg",
-  "license": "BSD-2-Clause",
-  "bugs": {
-    "url": "https://github.com/gsmlg/markdown-cmd/issues"
-  },
-  "dependencies": {
-    "marked": "~0.3.2",
-    "argp": "~1.0.4",
-    "highlight.js": "~8.0.0"
-  }
+    "name": "markdown-cmd",
+    "version": "0.1.1",
+    "description": "A comand markdown to convert markdown file to html",
+    "main": "lib",
+    "bin": {
+        "markdown": "bin/markdown"
+    },
+    "preferGlobal": true,
+    "scripts": {
+        "test": "npm test"
+    },
+    "repository": {
+        "type": "git",
+        "url": "git://github.com/gsmlg/markdown-cmd.git"
+    },
+    "keywords": [
+        "markdown"
+    ],
+    "author": "gsmlg",
+    "license": "BSD-2-Clause",
+    "bugs": {
+        "url": "https://github.com/gsmlg/markdown-cmd/issues"
+    },
+    "dependencies": {
+        "marked": "~0.3.2",
+        "argp": "~1.0.4",
+        "highlight.js": "~8.0.0"
+    }
 }
