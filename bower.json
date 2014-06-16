@@ -1,0 +1,25 @@
+{
+  "name": "markdown-cmd",
+  "version": "0.1.1",
+  "homepage": "https://github.com/gsmlg/markdown-cmd",
+  "authors": [
+    "gsmlg"
+  ],
+  "description": "convert markdown to html",
+  "main": "bin/markdown",
+  "moduleType": [
+    "globals",
+    "node"
+  ],
+  "keywords": [
+    "markdown"
+  ],
+  "license": "MIT",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ]
+}
