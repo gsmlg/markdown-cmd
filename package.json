@@ -26,5 +26,13 @@
         "marked": "~0.3.2",
         "argp": "~1.0.4",
         "highlight.js": "~8.0.0"
+    },
+    "spm": {
+        "dependencies": {
+            "marked": "~0.3.2",
+            "argp": "~1.0.4",
+            "highlight.js": "~8.0.0"
+        },
+        "main": "lib/index.js"
     }
 }
