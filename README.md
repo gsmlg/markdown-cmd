@@ -3,6 +3,8 @@ markdown-cmd
 
 A comand markdown to convert markdown file to html
 
+## New Feture
+**theme** now have one theme `parchment` as default theme.
 
 ## Usage
 ```
@@ -12,8 +14,11 @@ A comand markdown to convert markdown file to html
 
  Options:
   -o, --output[=STR]          output filename
+  -t, --theme[=STR]           The thems, default: parchment.
+                                Avaliables themes: 
+                                parchment
   -c, --code-theme[=STR]      The code themes, default: tomorrow-night.
-                                Avaliables themes:
+                                Avaliables code themes: 
                                 arta, ascetic, atelier-dune.dark,
                                 atelier-dune.light, atelier-forest.dark,
                                 atelier-forest.light, atelier-heath.dark,
@@ -31,7 +36,6 @@ A comand markdown to convert markdown file to html
                                 tomorrow-night, tomorrow, vs, xcode, zenburn
   -h, --help                  Display this help message and exit
   -v, --version               Output version information and exit
-
 
 ```
 

@@ -21,9 +21,14 @@ var fs = require('fs'),
         .body()
         .text(" Options:")
         .option({short: "o", long: "output", metavar: "STR", optional: true, description: "output filename"})
+        .option({short: "t", long: "theme", choices: p.theme, default: p.defaultTheme,
+                 metavar: "STR", optional: true,
+                 description: "The thems, default: " + p.defaultTheme + 
+                 ".\nAvaliables themes: \n" + p.themes.join(', ')})
         .option({short: "c", long: "code-theme", choices: p.codeThemes, default: p.codeDefaultTheme,
                  metavar: "STR", optional: true,
-                 description: "The code themes, default: " + p.codeDefaultTheme + ".\nAvaliables themes: \n" + p.codeThemes.join(', ')})
+                 description: "The code themes, default: " + p.codeDefaultTheme + 
+                 ".\nAvaliables code themes: \n" + p.codeThemes.join(', ')})
         .help()
         .argv();
 
@@ -33,13 +38,16 @@ var out = p.marked(input);
 
 var html = p.html;
 
+var themeHolder = '<!--theme-->';
 var codethemeHolder = '<!--code-theme-->';
 var markdownHolder = '<!--markdown-->';
 
-// console.log(argv['code-theme']);process.exit();
+var theme = argv['theme'];
 var codeTheme = argv['code-theme'];
 
-html = html.replace(codethemeHolder, fs.readFileSync(p.codeThemeCss[codeTheme], 'utf8'))
+html = html
+    .replace(themeHolder, fs.readFileSync(p.themeCss[theme], 'utf8'))
+    .replace(codethemeHolder, fs.readFileSync(p.codeThemeCss[codeTheme], 'utf8'))
     .replace(markdownHolder, out);
 
 var outputFile = argv.output || argv.file + '.html';
